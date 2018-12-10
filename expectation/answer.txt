@@ -1,0 +1,9 @@
+cpu & memory required :
+ 1 CPU Intel Pentium & 1 GB memory (default memory limit node), because we need to provide high performance but with less cost
+
+potential bottleneck :
+ threading issue; node.js process runs in a single thread
+
+solution :
+ - node clustering
+ - docker swarm
