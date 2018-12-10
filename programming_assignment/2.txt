@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#file.log attached
+
+sort file.log | uniq -c | awk '{print $2": "$1}'

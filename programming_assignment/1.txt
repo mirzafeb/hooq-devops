@@ -1,0 +1,1 @@
+SELECT client_addr, count(client_addr) jum FROM pg_stat_activity GROUP BY client_addr;

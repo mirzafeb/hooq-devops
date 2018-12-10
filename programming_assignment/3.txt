@@ -1,0 +1,12 @@
+    CREATE EXTENSION postgres_fdw;
+    CREATE EXTENSION dblink;
+    SELECT dblink_connect(‘host=localhost user=USER password=PW dbname=DB’);
+    CREATE FOREIGN DATA WRAPPER FDW VALIDATOR postgresql_fdw_validator;
+    CREATE SERVER myServerName FOREIGN DATA WRAPPER FDW OPTIONS (hostaddr ‘127.0.0.1’, dbname ‘DB’);
+    CREATE USER MAPPING FOR postgres SERVER myServerName OPTIONS (user ‘USER’, password ‘PW’);
+    SELECT dblink_connect(‘myServerName’);
+    GRANT USAGE ON FOREIGN SERVER myServerName TO postgres;
+    SELECT * FROM dblink
+    (‘myServerName’,’select id from DB.public.TABLE’)
+    AS DATA(id INTEGER);
+    \copy (query) to 'C:\tmp\result.csv' with csv
