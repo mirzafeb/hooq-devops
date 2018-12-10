@@ -1,0 +1,2 @@
+2018/12/10 03:26:16 [error] 10#10: *1 connect() failed (113: No route to host) while connecting to upstream, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://172.21.0.3:8000/", host: "localhost"
+2018/12/10 03:27:56 [error] 11#11: *3 connect() failed (113: No route to host) while connecting to upstream, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://172.21.0.3:8000/", host: "localhost"
